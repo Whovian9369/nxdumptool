@@ -3,10 +3,10 @@ name: Build nxdumptool rewrite tests
 on: [push]
 jobs:
   build:
-    job_name: master
     runs-on: ubuntu-latest
     container: devkitpro/devkita64
     steps:
+    job_name: master
     - uses: actions/checkout@v1
     - name: Building nxdumptool previews...
       run: |
