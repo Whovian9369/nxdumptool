@@ -2,8 +2,8 @@ name: Build nxdumptool rewrite tests
 
 on: [push]
 jobs:
-  job_name: master
   build:
+    job_name: master
     runs-on: ubuntu-latest
     container: devkitpro/devkita64
     steps:
