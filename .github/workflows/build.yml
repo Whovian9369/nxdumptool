@@ -2,10 +2,10 @@ name: Build nxdumptool rewrite tests
 
 on: [push]
 jobs:
+  job_name: master
   build:
     runs-on: ubuntu-latest
     container: devkitpro/devkita64
-    job_name: master
     steps:
     - uses: actions/checkout@v1
     - name: Building nxdumptool previews...
@@ -13,5 +13,5 @@ jobs:
         make -j$(nproc)
     - uses: actions/upload-artifact@v2
       with:
-        name: nxdt-${{ build.job_name }}
+        name: nxdt-${{ job_name }}
         path: nxdumptool.nro*
