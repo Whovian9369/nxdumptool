@@ -1,4 +1,4 @@
-name: Build nxdumptool's rewrite tests
+name: Build nxdumptool rewrite tests
 
 on: [push]
 jobs:
@@ -13,5 +13,5 @@ jobs:
         make -j$(nproc)
     - uses: actions/upload-artifact@v2
       with:
-        name: nxdt-${{ job_name }}
+        name: nxdt-${{ build.job_name }}
         path: nxdumptool.nro*
