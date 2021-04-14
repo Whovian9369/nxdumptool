@@ -1,4 +1,4 @@
-name: Build sys-tune and overlay
+name: Build nxdumptool\'s rewrite tests
 
 on: [push]
 jobs:
@@ -13,3 +13,7 @@ jobs:
     - name: Building nxdumptool previews...
       run: |
         make -j$(nproc)
+    - uses: actions/upload-artifact@v2
+      with:
+        name: nxdt-${{ matrix.job_name }}
+        path: nxdumptool.nro*
