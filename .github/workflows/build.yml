@@ -1,0 +1,15 @@
+name: Build sys-tune and overlay
+
+on: [push]
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Building nxdumptool previews...
+      run: |
+        make -j$(nproc)
